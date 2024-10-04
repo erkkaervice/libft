@@ -6,7 +6,7 @@
 #    By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 17:41:41 by eala-lah          #+#    #+#              #
-#    Updated: 2024/09/03 17:25:01 by eala-lah         ###   ########.fr        #
+#    Updated: 2024/10/04 16:04:52 by eala-lah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,92 +16,98 @@ INCS        = -I ./inc/
 
 SRC_PATH    = src/
 SRC         = \
-checks/ft_abs.c \
-checks/ft_isalnum.c \
-checks/ft_isalpha.c \
-checks/ft_isascii.c \
-checks/ft_isdigit.c \
-checks/ft_isprint.c \
-checks/ft_issign.c \
-checks/ft_isspace.c \
-converters/ft_atoi.c \
-converters/ft_itoa.c \
-converters/ft_tolower.c \
-converters/ft_toupper.c \
-errors/ft_error.c \
-getnextline/get_next_line.c \
-lists/ft_lstadd_back_bonus.c \
-lists/ft_lstadd_front_bonus.c \
-lists/ft_lstclear_bonus.c \
-lists/ft_lstdelone_bonus.c \
-lists/ft_lstiter_bonus.c \
-lists/ft_lstlast_bonus.c \
-lists/ft_lstmap_bonus.c \
-lists/ft_lstnew_bonus.c \
-lists/ft_lstsize_bonus.c \
-memories/ft_bzero.c \
-memories/ft_calloc.c \
-memories/ft_free.c \
-memories/ft_memchr.c \
-memories/ft_memcmp.c \
-memories/ft_memcpy.c \
-memories/ft_memmove.c \
-memories/ft_memset.c \
-printf/ft_printchar.c \
-printf/ft_printf.c \
-printf/ft_printhexa.c \
-printf/ft_printmah.c \
-printf/ft_printnbr.c \
-printf/ft_printstr.c \
-printf/ft_printulo.c \
-puts/ft_putchar_fd.c \
-puts/ft_putendl_fd.c \
-puts/ft_putnbr_fd.c \
-puts/ft_putstr_fd.c \
-strings/ft_nbrlen.c \
-strings/ft_newstr.c \
-strings/ft_split.c \
-strings/ft_strchr.c \
-strings/ft_strdup.c \
-strings/ft_striteri.c \
-strings/ft_strjoin.c \
-strings/ft_strlcat.c \
-strings/ft_strlcpy.c \
-strings/ft_strlen.c \
-strings/ft_strmapi.c \
-strings/ft_strncmp.c \
-strings/ft_strnstr.c \
-strings/ft_strrchr.c \
-strings/ft_strtrim.c \
-strings/ft_substr.c \
+	checks/ft_abs.c \
+	checks/ft_isalnum.c \
+	checks/ft_isalpha.c \
+	checks/ft_isascii.c \
+	checks/ft_isdigit.c \
+	checks/ft_isprint.c \
+	checks/ft_issign.c \
+	checks/ft_isspace.c \
+	converters/ft_atoi.c \
+	converters/ft_itoa.c \
+	converters/ft_tolower.c \
+	converters/ft_toupper.c \
+	errors/ft_error.c \
+	getnextline/get_next_line.c \
+	lists/ft_lstadd_back_bonus.c \
+	lists/ft_lstadd_front_bonus.c \
+	lists/ft_lstclear_bonus.c \
+	lists/ft_lstdelone_bonus.c \
+	lists/ft_lstiter_bonus.c \
+	lists/ft_lstlast_bonus.c \
+	lists/ft_lstmap_bonus.c \
+	lists/ft_lstnew_bonus.c \
+	lists/ft_lstsize_bonus.c \
+	memories/ft_bzero.c \
+	memories/ft_calloc.c \
+	memories/ft_free.c \
+	memories/ft_memchr.c \
+	memories/ft_memcmp.c \
+	memories/ft_memcpy.c \
+	memories/ft_memmove.c \
+	memories/ft_memset.c \
+	printf/ft_printchar.c \
+	printf/ft_printf.c \
+	printf/ft_printhexa.c \
+	printf/ft_printmah.c \
+	printf/ft_printnbr.c \
+	printf/ft_printstr.c \
+	printf/ft_printulo.c \
+	puts/ft_putchar_fd.c \
+	puts/ft_putendl_fd.c \
+	puts/ft_putnbr_fd.c \
+	puts/ft_putstr_fd.c \
+	strings/ft_nbrlen.c \
+	strings/ft_newstr.c \
+	strings/ft_split.c \
+	strings/ft_strchr.c \
+	strings/ft_strdup.c \
+	strings/ft_striteri.c \
+	strings/ft_strjoin.c \
+	strings/ft_strlcat.c \
+	strings/ft_strlcpy.c \
+	strings/ft_strlen.c \
+	strings/ft_strmapi.c \
+	strings/ft_strncmp.c \
+	strings/ft_strnstr.c \
+	strings/ft_strrchr.c \
+	strings/ft_strtrim.c \
+	strings/ft_substr.c \
 
 OBJ_PATH    = obj/
 OBJS        = $(addprefix $(OBJ_PATH), $(SRC:.c=.o))
 OBJ_DIRS    = $(sort $(dir $(OBJS)))
 
-GCC         = cc
-CFLAGS      = -Wall -Wextra -Werror
+GCC         = gcc
+CFLAGS      = -Wall -Wextra -Werror $(INCS)
+GIT_FLAGS   = --no-verbose
 
 AR          = ar rcs
 LIB         = ranlib
 
 all: $(OBJ_PATH) $(OBJ_DIRS) $(NAME)
+	@echo "Libft library compiled successfully."
 
 $(OBJ_PATH) $(OBJ_DIRS):
-	mkdir -p $(OBJ_DIRS)
+	@mkdir -p $(OBJ_DIRS) || { echo "Failed to create $(OBJ_DIRS)"; exit 1; }
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c | $(OBJ_PATH) $(OBJ_DIRS)
-	$(GCC) $(CFLAGS) -c $< -o $@ $(INCS)
+	@$(GCC) $(CFLAGS) -c $< -o $@ 2> /dev/stderr > /dev/null
+	@echo "Compiled $< into $@."
 
 $(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
-	$(LIB) $(NAME)
+	@$(AR) $(NAME) $(OBJS) 2> /dev/stderr > /dev/null
+	@$(LIB) $(NAME) 2> /dev/stderr > /dev/null
+	@echo "Created the library: $(NAME)."
 
 clean:
-	rm -rf $(OBJ_PATH)
+	@rm -rf $(OBJ_PATH)
+	@echo "Cleaned up object files."
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "Cleaned up library."
 
 re: fclean all
 
