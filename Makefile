@@ -6,7 +6,7 @@
 #    By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 17:41:41 by eala-lah          #+#    #+#              #
-#    Updated: 2024/10/07 12:42:38 by eala-lah         ###   ########.fr        #
+#    Updated: 2024/10/07 13:11:36 by eala-lah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,28 +87,22 @@ AR          = ar rcs
 LIB         = ranlib
 
 all: $(OBJ_PATH) $(OBJ_DIRS) $(NAME)
-	@echo "Libft library compiled successfully."
 
 $(OBJ_PATH) $(OBJ_DIRS):
 	@mkdir -p $(OBJ_DIRS) 2> /dev/null || { echo "Failed to create object directories." >&2; exit 1; }
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c | $(OBJ_PATH) $(OBJ_DIRS)
-	@echo "Compiling $< with include paths: $(INCS)"
 	@$(GCC) $(CFLAGS) -c $< -o $@ 2> /dev/stderr > /dev/null || { echo "Failed to compile $<." >&2; exit 1; }
-	@echo "Compiled $< into $@."
 
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS) 2> /dev/stderr > /dev/null || { echo "Failed to create library $(NAME)." >&2; exit 1; }
 	@$(LIB) $(NAME) 2> /dev/stderr > /dev/null || { echo "Failed to ranlib $(NAME)." >&2; exit 1; }
-	@echo "Created the library: $(NAME)."
 
 clean:
 	@rm -rf $(OBJ_PATH) 2> /dev/null || { echo "Failed to clean object files." >&2; }
-	@echo "Object files cleaned."
 
 fclean: clean
 	@rm -f $(NAME) 2> /dev/null || { echo "Failed to fully clean up." >&2; }
-	@echo "Removed library: $(NAME)."
 
 re: fclean all
 
