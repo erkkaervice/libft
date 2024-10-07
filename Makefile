@@ -6,7 +6,7 @@
 #    By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 17:41:41 by eala-lah          #+#    #+#              #
-#    Updated: 2024/10/07 12:02:05 by eala-lah         ###   ########.fr        #
+#    Updated: 2024/10/07 12:36:21 by eala-lah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,11 +103,11 @@ $(NAME): $(OBJS)
 	@echo "Created the library: $(NAME)."
 
 clean:
-	@rm -rf $(OBJ_PATH)
+	@rm -rf $(OBJ_PATH) 2> /dev/stderr > /dev/null
 	@echo "Cleaned up object files."
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) 2> /dev/stderr > /dev/null
 	@echo "Cleaned up library."
 
 re: fclean all
