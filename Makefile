@@ -6,7 +6,7 @@
 #    By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 17:41:41 by eala-lah          #+#    #+#              #
-#    Updated: 2024/10/07 11:20:51 by eala-lah         ###   ########.fr        #
+#    Updated: 2024/10/07 11:22:54 by eala-lah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,7 +94,7 @@ $(OBJ_PATH) $(OBJ_DIRS):
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c | $(OBJ_PATH) $(OBJ_DIRS)
 	@echo "Compiling $< with include paths: $(INCS)"
-	@$(GCC) $(CFLAGS) -c $< -o $@ 2> /dev/stderr > /dev/null
+	$(GCC) $(CFLAGS) -c $< -o $@ 2> /dev/stderr > /dev/null
 	@echo "Compiled $< into $@."
 
 $(NAME): $(OBJS)
