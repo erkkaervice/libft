@@ -6,7 +6,7 @@
 #    By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 17:41:41 by eala-lah          #+#    #+#              #
-#    Updated: 2024/10/07 14:11:21 by eala-lah         ###   ########.fr        #
+#    Updated: 2024/10/07 14:19:01 by eala-lah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +81,6 @@ OBJ_DIRS    = $(sort $(dir $(OBJS)))
 
 GCC         = gcc
 CFLAGS      = -Wall -Wextra -Werror $(INCS)
-GIT_FLAGS   = --no-verbose
 
 AR          = ar rcs
 LIB         = ranlib
