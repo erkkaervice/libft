@@ -6,7 +6,7 @@
 #    By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 17:41:41 by eala-lah          #+#    #+#              #
-#    Updated: 2024/10/07 14:19:01 by eala-lah         ###   ########.fr        #
+#    Updated: 2024/10/11 14:05:04 by eala-lah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME        = libft.a
 
 INCS        = -I ./inc/
 
-SRC_PATH    = src/
+SRC_DIR    = src/
 SRC         = \
 	checks/ft_abs.c \
 	checks/ft_isalnum.c \
@@ -75,34 +75,34 @@ SRC         = \
 	strings/ft_strtrim.c \
 	strings/ft_substr.c \
 
-OBJ_PATH    = obj/
-OBJS        = $(addprefix $(OBJ_PATH), $(SRC:.c=.o))
+OBJ_DIR    = obj/
+OBJS        = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 OBJ_DIRS    = $(sort $(dir $(OBJS)))
 
-GCC         = gcc
-CFLAGS      = -Wall -Wextra -Werror $(INCS)
+CC         = gcc
+CFLAGS      = -Wall -Wextra -Werror $(INCS) -fPIC
 
 AR          = ar rcs
 LIB         = ranlib
 
-all: $(OBJ_PATH) $(OBJ_DIRS) $(NAME)
+all: $(OBJ_DIR) $(OBJ_DIRS) $(NAME)
 
-$(OBJ_PATH) $(OBJ_DIRS):
+$(OBJ_DIR) $(OBJ_DIRS):
 	@mkdir -p $(OBJ_DIRS) 2> /dev/null || { echo "Failed to create object directories." >&2; exit 1; }
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c | $(OBJ_PATH) $(OBJ_DIRS)
-	@$(GCC) $(CFLAGS) -c $< -o $@ 2> /dev/stderr > /dev/null || { echo "Failed to compile $<." >&2; exit 1; }
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c inc/libft.h | $(OBJ_DIR) $(OBJ_DIRS)
+	@$(CC) $(CFLAGS) -c $< -o $@ 2> /dev/stderr > /dev/null || { echo "Failed to compile $<." >&2; exit 1; }
 
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS) 2> /dev/stderr > /dev/null || { echo "Failed to create library $(NAME)." >&2; exit 1; }
 	@$(LIB) $(NAME) 2> /dev/stderr > /dev/null || { echo "Failed to ranlib $(NAME)." >&2; exit 1; }
 
 clean:
-	@rm -rf $(OBJ_PATH) 2> /dev/null || { echo "Failed to clean object files." >&2; }
+	@rm -rf $(OBJ_DIR) 2> /dev/null || { echo "Failed to clean object files." >&2; }
 
 fclean: clean
-	@rm -f $(NAME) 2> /dev/null || { echo "Failed to fully clean up." >&2; }
-
+	@rm -f $(NAME) 2> /dev/null || { echo "Failed to remove generated files."; }
+	
 re: fclean all
 
 .PHONY: all clean fclean re
