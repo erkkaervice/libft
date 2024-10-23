@@ -6,7 +6,7 @@
 #    By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 17:41:41 by eala-lah          #+#    #+#              #
-#    Updated: 2024/10/11 14:05:04 by eala-lah         ###   ########.fr        #
+#    Updated: 2024/10/23 13:29:56 by eala-lah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME        = libft.a
 
 INCS        = -I ./inc/
 
-SRC_DIR    = src/
+SRC_DIR     = src/
 SRC         = \
 	checks/ft_abs.c \
 	checks/ft_isalnum.c \
@@ -75,11 +75,11 @@ SRC         = \
 	strings/ft_strtrim.c \
 	strings/ft_substr.c \
 
-OBJ_DIR    = obj/
+OBJ_DIR     = obj/
 OBJS        = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 OBJ_DIRS    = $(sort $(dir $(OBJS)))
 
-CC         = gcc
+CC          = gcc
 CFLAGS      = -Wall -Wextra -Werror $(INCS) -fPIC
 
 AR          = ar rcs
@@ -101,8 +101,8 @@ clean:
 	@rm -rf $(OBJ_DIR) 2> /dev/null || { echo "Failed to clean object files." >&2; }
 
 fclean: clean
-	@rm -f $(NAME) 2> /dev/null || { echo "Failed to remove generated files."; }
-	
+	@rm -f $(NAME) 2> /dev/null || { echo "Failed to remove generated files." >&2; }
+
 re: fclean all
 
 .PHONY: all clean fclean re
