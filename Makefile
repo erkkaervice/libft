@@ -6,7 +6,7 @@
 #    By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 17:41:41 by eala-lah          #+#    #+#              #
-#    Updated: 2024/11/27 17:59:25 by eala-lah         ###   ########.fr        #
+#    Updated: 2024/11/27 18:10:46 by eala-lah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC         = \
 	checks/ft_isalpha.c \
 	checks/ft_isascii.c \
 	checks/ft_isdigit.c \
+	checks/ft_isfloat.c \
 	checks/ft_isprint.c \
 	checks/ft_issign.c \
 	checks/ft_isspace.c \

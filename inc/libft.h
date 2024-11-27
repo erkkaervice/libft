@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 14:09:50 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/11/27 17:51:02 by eala-lah         ###   ########.fr       */
+/*   Updated: 2024/11/27 18:10:49 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
+# include <stdbool.h>
 
 // CHECKS
 
@@ -26,6 +27,7 @@ int			ft_isalnum(int c);
 int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isdigit(int c);
+bool		ft_isfloat(const char *str);
 int			ft_isprint(int c);
 int			ft_issign(char c);
 int			ft_isspace(int c);
