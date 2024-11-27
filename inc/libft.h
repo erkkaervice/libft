@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 14:09:50 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/09/03 17:26:52 by eala-lah         ###   ########.fr       */
+/*   Updated: 2024/11/27 17:51:02 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int			ft_isspace(int c);
 
 // CONVERTERS
 
+double		ft_atof(const char *str);
 int			ft_atoi(const char *str);
 char		*ft_itoa(int n);
 int			ft_tolower(int c);
