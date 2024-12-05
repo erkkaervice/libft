@@ -6,10 +6,12 @@
 #    By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 17:41:41 by eala-lah          #+#    #+#              #
-#    Updated: 2024/12/05 15:14:20 by eala-lah         ###   ########.fr        #
+#    Updated: 2024/12/05 17:16:34 by eala-lah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# --- Library Name and Source Directory ---
+# Specifies the library name and the source directory.
 NAME        = libft.a
 
 INCS        = -I ./inc/
@@ -75,36 +77,49 @@ SRC         = \
 	strings/ft_strnstr.c \
 	strings/ft_strrchr.c \
 	strings/ft_strtrim.c \
-	strings/ft_substr.c \
+	strings/ft_substr.c
 
 OBJ_DIR     = obj/
 OBJS        = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
-OBJ_DIRS    = $(sort $(dir $(OBJS)))
 
+# --- Compiler and Flags ---
+# Specifies the compiler, compilation flags, and necessary include paths.
 CC          = gcc
 CFLAGS      = -Wall -Wextra -Werror $(INCS) -fPIC
 
-AR          = ar rcs
-LIB         = ranlib
+# --- Default Target ---
+# Builds the library
+all: $(NAME)
 
-all: $(OBJ_DIR) $(OBJ_DIRS) $(NAME)
+# --- Directory Setup ---
+# Creates the object directory if it doesn't exist
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR) 2> /dev/null || { echo "Failed to create object directory." >&2; exit 1; }
 
-$(OBJ_DIR) $(OBJ_DIRS):
-	@mkdir -p $(OBJ_DIRS) 2> /dev/null || { echo "Failed to create object directories." >&2; exit 1; }
+# --- Compilation ---
+# Compiles source files into object files
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	@$(CC) $(CFLAGS) -c $< -o $@ 2> /dev/stderr || { echo "Failed to compile $<." >&2; exit 1; }
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c inc/libft.h | $(OBJ_DIR) $(OBJ_DIRS)
-	@$(CC) $(CFLAGS) -c $< -o $@ 2> /dev/stderr > /dev/null || { echo "Failed to compile $<." >&2; exit 1; }
-
+# --- Linking ---
+# Archives the object files into the library
 $(NAME): $(OBJS)
-	@$(AR) $(NAME) $(OBJS) 2> /dev/stderr > /dev/null || { echo "Failed to create library $(NAME)." >&2; exit 1; }
-	@$(LIB) $(NAME) 2> /dev/stderr > /dev/null || { echo "Failed to ranlib $(NAME)." >&2; exit 1; }
+	@ar -rcs $(NAME) $(OBJS) > /dev/null 2>&1 || { echo "Failed to create library $(NAME)." >&2; exit 1; }
 
+# --- Cleaning ---
+# Removes object files
 clean:
-	@rm -rf $(OBJ_DIR) 2> /dev/null || { echo "Failed to clean object files." >&2; }
+	@rm -rf $(OBJ_DIR) 2> /dev/null || { echo "Failed to clean object files." >&2; exit 1; }
 
+# --- Full Clean ---
+# Full clean target to remove the library and object files
 fclean: clean
-	@rm -f $(NAME) 2> /dev/null || { echo "Failed to remove generated files." >&2; }
+	@rm -f $(NAME) 2> /dev/stderr || { echo "Failed to remove $(NAME)." >&2; exit 1; }
 
+# --- Rebuild ---
+# Rebuilds everything by cleaning and running all again
 re: fclean all
 
+# --- Phony Targets ---
+# Declares all targets as phony to avoid conflicts with files of the same name
 .PHONY: all clean fclean re
