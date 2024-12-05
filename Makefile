@@ -6,17 +6,14 @@
 #    By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 17:41:41 by eala-lah          #+#    #+#              #
-#    Updated: 2024/12/05 14:52:03 by eala-lah         ###   ########.fr        #
+#    Updated: 2024/12/05 15:07:54 by eala-lah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# --- Project Name and Libraries ---
-# Specifies the library name, includes, and source files for the project.
 NAME        = libft.a
+
 INCS        = -I ./inc/
 
-# --- Source and Object Directories ---
-# Defines directories for source code, object files, and object directories.
 SRC_DIR     = src/
 SRC         = \
 	checks/ft_abs.c \
@@ -84,50 +81,30 @@ OBJ_DIR     = obj/
 OBJS        = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 OBJ_DIRS    = $(sort $(dir $(OBJS)))
 
-# --- Compiler and Flags ---
-# Specifies the compiler and flags used for compilation.
 CC          = gcc
 CFLAGS      = -Wall -Wextra -Werror $(INCS) -fPIC
 
-# --- Archiving and Ranlib ---
-# Specifies the archiver and ranlib commands used to create and update the library.
 AR          = ar rcs
 LIB         = ranlib
 
-# --- Default Target ---
-# Builds the final static library.
 all: $(OBJ_DIR) $(OBJ_DIRS) $(NAME)
 
-# --- Directory Setup ---
-# Creates the object directories if they don't already exist.
 $(OBJ_DIR) $(OBJ_DIRS):
 	@mkdir -p $(OBJ_DIRS) 2> /dev/null || { echo "Failed to create object directories." >&2; exit 1; }
 
-# --- Compilation ---
-# Compiles the source files into object files.
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c inc/libft.h | $(OBJ_DIR) $(OBJ_DIRS)
 	@$(CC) $(CFLAGS) -c $< -o $@ 2> /dev/stderr > /dev/null || { echo "Failed to compile $<." >&2; exit 1; }
 
-# --- Library Creation ---
-# Creates the static library from the object files and runs ranlib.
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS) 2> /dev/stderr > /dev/null || { echo "Failed to create library $(NAME)." >&2; exit 1; }
 	@$(LIB) $(NAME) 2> /dev/stderr > /dev/null || { echo "Failed to ranlib $(NAME)." >&2; exit 1; }
 
-# --- Cleaning ---
-# Removes object files and cleans up the build.
 clean:
 	@rm -rf $(OBJ_DIR) 2> /dev/null || { echo "Failed to clean object files." >&2; }
 
-# --- Full Cleaning ---
-# Removes everything, including the generated library.
 fclean: clean
 	@rm -f $(NAME) 2> /dev/null || { echo "Failed to remove generated files." >&2; }
 
-# --- Rebuild ---
-# Cleans and then rebuilds the library.
 re: fclean all
 
-# --- Phony Targets ---
-# Declares all targets as phony to avoid conflicts with files of the same name.
 .PHONY: all clean fclean re
