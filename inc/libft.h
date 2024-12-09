@@ -6,13 +6,21 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 14:09:50 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/05 15:14:23 by eala-lah         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:25:59 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+/* Includes necessary libraries for the project.
+ * - Limits.h: Defines constants related to system limits (e.g., INT_MAX).
+ * - Errno.h: Provides error codes and descriptions for system calls.
+ * - Stdlib.h: Includes functions for memory allocation and string manipulation.
+ * - Unistd.h: Contains system calls like read and write.
+ * - Stdint.h: Defines fixed-width integer types.
+ * - Stdbool.h: Provides a boolean type for C.
+ */
 # include <limits.h>
 # include <errno.h>
 # include <stdlib.h>
@@ -20,8 +28,9 @@
 # include <stdint.h>
 # include <stdbool.h>
 
-// CHECKS
-
+/* --- Check Functions ---
+ * Functions for validating different types of characters and data.
+ */
 int			ft_abs(int n);
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);
@@ -32,24 +41,28 @@ int			ft_isprint(int c);
 int			ft_issign(char c);
 int			ft_isspace(int c);
 
-// CONVERTERS
-
+/* --- Converter Functions ---
+ * Functions for converting data types and manipulating strings.
+ */
 double		ft_atof(const char *str);
 int			ft_atoi(const char *str);
 char		*ft_itoa(int n);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
 
-// ERRORS
-
+/* --- Error Handling ---
+ * Function for printing error messages.
+ */
 void		ft_error(char *msg);
 
-// GET NEXT LINE
-
+/* --- Get Next Line Function ---
+ * Function for reading a line from a file descriptor.
+ */
 char		*get_next_line(int fd);
 
-// LISTS
-
+/* --- Linked List Functions ---
+ * Functions for manipulating linked lists.
+ */
 typedef struct s_list
 {
 	void			*content;
@@ -65,8 +78,9 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list		*ft_lstnew(void *content);
 int			ft_lstsize(t_list *lst);
 
-// MEMORIES
-
+/* --- Memory Functions ---
+ * Functions for manipulating memory.
+ */
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t count, size_t size);
 char		*ft_free(char **str);
@@ -76,19 +90,22 @@ void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memmove(void *dst, const void *src, size_t len);
 void		*ft_memset(void *b, int c, size_t len);
 
-// PRINTF
-
+/* --- Printf Function ---
+ * Function for formatted output to stdout.
+ */
 int			ft_printf(const char *str, ...);
 
-// PUTS
-
+/* --- Output Functions ---
+ * Functions for writing data to file descriptors.
+ */
 void		ft_putchar_fd(char c, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 void		ft_putstr_fd(char *s, int fd);
 
-// STRINGS
-
+/* --- String Functions ---
+ * Functions for manipulating strings.
+ */
 size_t		ft_nbrlen(int nbr);
 char		*ft_newstr(size_t n);
 char		**ft_split(char const *s, char c);
