@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 14:09:50 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/17 15:02:06 by eala-lah         ###   ########.fr       */
+/*   Updated: 2024/12/17 15:23:11 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isdigit(int c);
 bool		ft_isfloat(const char *str);
+int			ft_isnum(const char *str);
 int			ft_isprint(int c);
 int			ft_issign(char c);
 int			ft_isspace(int c);
