@@ -6,23 +6,16 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 12:22:51 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/09 13:24:50 by eala-lah         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:17:41 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-/* Includes necessary libraries for the project.
- * - stdarg.h: For handling variable arguments in functions like ft_printf.
- * - unistd.h: Provides write functionality for output.
- */
 # include <stdarg.h>
 # include <unistd.h>
 
-/* --- Function Prototypes ---
- * Functions responsible for formatted output to stdout.
- */
 size_t			ft_nbrlen(int nbr);
 int				ft_printchar(char c);
 int				ft_printf(const char *str, ...);
