@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 12:22:51 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/17 14:47:37 by eala-lah         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:49:29 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 /* --- Function Prototypes ---
  * Functions responsible for formatted output to stdout.
  */
-size_t			nbrlen(int nbr);
+size_t			ft_nbrlen(int nbr);
 int				ft_printchar(char c);
 int				ft_printf(const char *str, ...);
 int				ft_printhexa(unsigned long n, char format);
