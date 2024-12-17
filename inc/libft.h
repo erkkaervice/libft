@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 14:09:50 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/17 14:50:41 by eala-lah         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:58:15 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ bool		ft_isfloat(const char *str);
 int			ft_isprint(int c);
 int			ft_issign(char c);
 int			ft_isspace(int c);
+
 /* --- Converter Functions ---
  * Functions for converting data types and manipulating strings.
  */
@@ -48,14 +49,17 @@ int			ft_atoi(const char *str);
 char		*ft_itoa(int n);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
+
 /* --- Error Handling ---
  * Function for printing error messages.
  */
 void		ft_error(char *msg);
+
 /* --- Get Next Line Function ---
  * Function for reading a line from a file descriptor.
  */
 char		*get_next_line(int fd);
+
 /* --- Linked List Functions ---
  * Functions for manipulating linked lists.
  */
@@ -73,6 +77,7 @@ t_list		*ft_lstlast(t_list *lst);
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list		*ft_lstnew(void *content);
 int			ft_lstsize(t_list *lst);
+
 /* --- Memory Functions ---
  * Functions for manipulating memory.
  */
@@ -84,10 +89,12 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memmove(void *dst, const void *src, size_t len);
 void		*ft_memset(void *b, int c, size_t len);
+
 /* --- Printf Function ---
  * Function for formatted output to stdout.
  */
 int			ft_printf(const char *str, ...);
+
 /* --- Output Functions ---
  * Functions for writing data to file descriptors.
  */
@@ -95,6 +102,7 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 void		ft_putstr_fd(char *s, int fd);
+
 /* --- String Functions ---
  * Functions for manipulating strings.
  */
