@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 14:09:50 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/17 14:58:15 by eala-lah         ###   ########.fr       */
+/*   Updated: 2024/12/17 15:02:06 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int			ft_isspace(int c);
  */
 double		ft_atof(const char *str);
 int			ft_atoi(const char *str);
+long		ft_atol(char const *str);
 char		*ft_itoa(int n);
 int			ft_tolower(int c);
 int			ft_toupper(int c);

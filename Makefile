@@ -6,7 +6,7 @@
 #    By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 17:41:41 by eala-lah          #+#    #+#              #
-#    Updated: 2024/12/17 14:19:29 by eala-lah         ###   ########.fr        #
+#    Updated: 2024/12/17 15:02:05 by eala-lah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC         = \
 	checks/ft_isspace.c \
 	converters/ft_atof.c \
 	converters/ft_atoi.c \
+	converters/ft_atol.c \
 	converters/ft_itoa.c \
 	converters/ft_tolower.c \
 	converters/ft_toupper.c \
