@@ -6,12 +6,11 @@
 #    By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 17:41:41 by eala-lah          #+#    #+#              #
-#    Updated: 2024/12/05 17:20:28 by eala-lah         ###   ########.fr        #
+#    Updated: 2024/12/17 14:19:29 by eala-lah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        = libft.a
-
 INCS        = -I ./inc/
 
 SRC_DIR     = src/
