@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 12:22:51 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/17 14:17:41 by eala-lah         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:35:07 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdarg.h>
 # include <unistd.h>
+#include <limits.h>
 
 size_t			ft_nbrlen(int nbr);
 int				ft_printchar(char c);

@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 14:09:50 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/17 14:17:41 by eala-lah         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:27:00 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,13 @@ bool		ft_isfloat(const char *str);
 int			ft_isprint(int c);
 int			ft_issign(char c);
 int			ft_isspace(int c);
-
 double		ft_atof(const char *str);
 int			ft_atoi(const char *str);
 char		*ft_itoa(int n);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
-
 void		ft_error(char *msg);
-
 char		*get_next_line(int fd);
-
 typedef struct s_list
 {
 	void			*content;
@@ -54,7 +50,6 @@ t_list		*ft_lstlast(t_list *lst);
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list		*ft_lstnew(void *content);
 int			ft_lstsize(t_list *lst);
-
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t count, size_t size);
 char		*ft_free(char **str);
@@ -63,14 +58,11 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memmove(void *dst, const void *src, size_t len);
 void		*ft_memset(void *b, int c, size_t len);
-
 int			ft_printf(const char *str, ...);
-
 void		ft_putchar_fd(char c, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 void		ft_putstr_fd(char *s, int fd);
-
 size_t		ft_nbrlen(int nbr);
 char		*ft_newstr(size_t n);
 char		**ft_split(char const *s, char c);
