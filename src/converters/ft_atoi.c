@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 15:17:32 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/18 14:08:44 by eala-lah         ###   ########.fr       */
+/*   Updated: 2024/12/18 14:16:48 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,17 @@
 /*
  * ft_atoi - Converts a string to an integer.
  *
- * This function parses the input string, skipping leading whitespace characters, 
- * and optionally handles a '+' or '-' sign. It then converts the remaining 
- * characters to an integer until a non-digit character is encountered.
- * If the result overflows the range of a 32-bit signed integer, the function 
- * will return an integer result as computed by the underlying logic, though 
- * handling for overflow is not explicitly done in this function.
+ * This function processes the input string by skipping leading whitespace, 
+ * handling an optional '+' or '-' sign, and then converting the numeric 
+ * part of the string into an integer. It continues until a non-digit character 
+ * is encountered, at which point the conversion stops.
+ * Note: Overflow is not explicitly checked in this function.
  *
  * Parameters:
- * - str: The string to be converted.
+ * - str: The string to be converted into an integer.
  *
  * Returns:
- * - The converted integer value.
+ * - The integer representation of the string.
  */
 int	ft_atoi(char const *str)
 {

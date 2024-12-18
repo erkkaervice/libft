@@ -6,26 +6,26 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 15:00:38 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/17 15:01:14 by eala-lah         ###   ########.fr       */
+/*   Updated: 2024/12/18 14:16:48 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
- * ft_atol - Converts a string to a long integer, considering potential
- * sign and overflow.
+ * ft_atol - Converts a string to a long integer.
  *
- * This function mimics the behavior of the `atoi` function, but it performs
- * the conversion to a `long` type, which is capable of handling larger values
- * than a standard `int`. It also properly handles the sign and ensures that
- * integer overflows are avoided.
+ * This function is similar to `ft_atoi`, but it converts the string to a 
+ * `long` integer type. It handles both the sign and overflow concerns, 
+ * ensuring that larger values beyond the range of an `int` are processed 
+ * correctly. If an overflow is detected, the function returns a value 
+ * beyond the standard `int` range, as handled by the underlying logic.
  *
  * Parameters:
- * - str: The string to be converted to a long integer.
+ * - str: The string to be converted into a long integer.
  *
  * Returns:
- * - The converted long integer, ensuring proper sign and overflow handling.
+ * - The long integer representation of the string, with overflow handling.
  */
 long	ft_atol(char const *str)
 {

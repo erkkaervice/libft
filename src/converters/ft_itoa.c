@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 17:32:46 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/18 14:09:18 by eala-lah         ###   ########.fr       */
+/*   Updated: 2024/12/18 14:16:48 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 /*
  * ft_itoa - Converts an integer to a string.
  *
- * This function takes an integer and converts it into a dynamically allocated 
- * string representation of that number. It handles both positive and negative 
- * integers, ensuring the correct placement of the minus sign for negative numbers. 
- * The function first calculates the absolute value of the integer and determines 
- * the string length based on the number of digits. The digits are then placed into 
- * the string in reverse order, and the minus sign is added if the number is negative.
+ * This function converts a given integer into its string representation. 
+ * It handles both positive and negative integers by first calculating the 
+ * absolute value of the number. The function then determines the number 
+ * of digits in the integer, allocates memory for the string, and 
+ * populates it with the digits in reverse order. If the number is negative, 
+ * a minus sign is placed at the start.
  *
  * Parameters:
- * - n: The integer to be converted.
+ * - n: The integer to be converted into a string.
  *
  * Returns:
- * - A string representing the integer.
+ * - A dynamically allocated string representing the integer.
  * - NULL if memory allocation fails.
  */
 char	*ft_itoa(int n)
