@@ -6,12 +6,31 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 12:22:47 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/05/23 16:05:25 by eala-lah         ###   ########.fr       */
+/*   Updated: 2024/12/18 16:11:07 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/*
+ * ft_format - Handles format specifiers for the custom printf implementation.
+ *
+ * This function processes the format specifier and calls the appropriate 
+ * helper function to print the corresponding argument. It handles different 
+ * types of data, including characters (`c`), strings (`s`), integers 
+ * (`d`, `i`), unsigned integers (`u`), hexadecimal numbers (`x`, `X`), and 
+ * pointers (`p`). If the specifier is not supported, the function returns 
+ * -1 to indicate an error.
+ *
+ * Parameters:
+ * - args: A list of arguments passed to the printf function.
+ * - format: The format specifier character that determines how the argument 
+ * should be printed.
+ *
+ * Returns:
+ * - The number of characters printed for the corresponding format, or -1 if 
+ *   an unsupported format is encountered.
+ */
 static int	ft_format(va_list args, const char format)
 {
 	void	*ptr;
@@ -39,6 +58,24 @@ static int	ft_format(va_list args, const char format)
 		return (-1);
 }
 
+/*
+ * ft_printf - Custom printf implementation for formatted output.
+ *
+ * This function parses the format string `str` and prints the corresponding 
+ * arguments based on format specifiers. It handles various specifiers, 
+ * including characters (`c`), strings (`s`), integers (`d`, `i`), unsigned 
+ * integers (`u`), hexadecimal (`x`, `X`), and pointers (`p`). The function 
+ * calls the appropriate helper functions to print each type, ensuring that 
+ * they are formatted correctly. If an unsupported format specifier is 
+ * encountered, 
+ * the function returns -1.
+ *
+ * Parameters:
+ * - str: The format string containing specifiers for the arguments.
+ *
+ * Returns:
+ * - The total number of characters printed, or -1 if an error occurs.
+ */
 int	ft_printf(const char *str, ...)
 {
 	va_list	args;
