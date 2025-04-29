@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 15:17:32 by eala-lah          #+#    #+#             */
-/*   Updated: 2025/04/29 13:34:54 by eala-lah         ###   ########.fr       */
+/*   Updated: 2025/04/29 14:07:31 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,15 @@ int	ft_atoi(char const *str)
 			sign *= -1;
 		str++;
 	}
+	if (!ft_isdigit(*str))
+		return (0);
 	while (*str && ft_isdigit(*str))
 	{
 		dig = *str - '0';
 		n = n * 10 + sign * dig;
 		str++;
 	}
+	if (*str != '\0')
+		return (0);
 	return ((int)n);
 }
