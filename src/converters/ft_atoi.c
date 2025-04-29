@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 15:17:32 by eala-lah          #+#    #+#             */
-/*   Updated: 2025/04/29 13:33:01 by eala-lah         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:34:54 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,34 +29,25 @@
  */
 int	ft_atoi(char const *str)
 {
-    long long int	n;
-    int				sign;
-    int				dig;
+	long long int	n;
+	int				sign;
+	long long int	dig;
 
-    n = 0;
-    sign = 1;
-    while (*str && ft_isspace(*str)) // skip whitespace
-        str++;
-    if (*str == '-' || *str == '+') // handle sign
-    {
-        if (*str == '-')
-            sign *= -1;
-        str++;
-    }
-    while (*str && ft_isdigit(*str)) // process digits
-    {
-        dig = *str - '0';
-        if (n > (INT_MAX - dig) / 10) // overflow check
-        {
-            if (sign == 1)
-                return (INT_MAX); // or any error value you prefer
-            else
-                return (INT_MIN); // or any error value you prefer
-        }
-        n = n * 10 + dig;
-        str++;
-    }
-    if (*str != '\0') // check if there are invalid characters
-        return (0); // invalid input, return 0 or any error value
-    return ((int)(n * sign)); // return the result with the correct sign
+	n = 0;
+	sign = 1;
+	while (*str && ft_isspace(*str))
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign *= -1;
+		str++;
+	}
+	while (*str && ft_isdigit(*str))
+	{
+		dig = *str - '0';
+		n = n * 10 + sign * dig;
+		str++;
+	}
+	return ((int)n);
 }
