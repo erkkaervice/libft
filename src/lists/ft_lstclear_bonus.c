@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 16:39:13 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/18 14:44:32 by eala-lah         ###   ########.fr       */
+/*   Updated: 2025/05/06 15:35:38 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@
  * - Nothing. The list is cleared in-place, and the pointer to the list is set 
  * to NULL.
  */
-
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	if (!lst || !del || !(*lst))

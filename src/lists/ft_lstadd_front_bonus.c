@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 16:39:08 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/18 14:34:26 by eala-lah         ###   ########.fr       */
+/*   Updated: 2025/05/06 15:35:39 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@
  * Returns:
  * - Nothing. The linked list is modified in-place.
  */
-
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)

@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 16:39:24 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/18 14:44:32 by eala-lah         ###   ########.fr       */
+/*   Updated: 2025/05/06 15:35:40 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@
  * - Nothing. The function iterates over the list and applies `f` to each 
  * node's content.
  */
-
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)

@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 16:39:18 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/18 14:34:45 by eala-lah         ###   ########.fr       */
+/*   Updated: 2025/05/06 15:35:40 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@
  * Returns:
  * - Nothing. The element is removed and its memory is freed.
  */
-
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst || !del)
