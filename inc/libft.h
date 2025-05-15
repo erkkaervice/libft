@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 14:09:50 by eala-lah          #+#    #+#             */
-/*   Updated: 2024/12/17 15:23:11 by eala-lah         ###   ########.fr       */
+/*   Updated: 2025/05/15 15:22:39 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ double		ft_atof(const char *str);
 int			ft_atoi(const char *str);
 long		ft_atol(char const *str);
 char		*ft_itoa(int n);
+void		ft_swap(void **a, void **b);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
 
