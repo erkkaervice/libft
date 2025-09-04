@@ -6,7 +6,7 @@
 #    By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 17:41:41 by eala-lah          #+#    #+#              #
-#    Updated: 2025/05/15 15:22:56 by eala-lah         ###   ########.fr        #
+#    Updated: 2025/09/04 17:47:50 by eala-lah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,7 @@ SRC         = \
 	puts/ft_putendl_fd.c \
 	puts/ft_putnbr_fd.c \
 	puts/ft_putstr_fd.c \
+	strings/ft_array_len.c \
 	strings/ft_nbrlen.c \
 	strings/ft_newstr.c \
 	strings/ft_split.c \

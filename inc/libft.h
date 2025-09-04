@@ -6,7 +6,7 @@
 /*   By: eala-lah <eala-lah@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 14:09:50 by eala-lah          #+#    #+#             */
-/*   Updated: 2025/05/15 15:22:39 by eala-lah         ###   ########.fr       */
+/*   Updated: 2025/09/04 17:47:28 by eala-lah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ void		ft_putstr_fd(char *s, int fd);
 /* --- String Functions ---
  * Functions for manipulating strings.
  */
+int			ft_array_len(void **arr);
 size_t		ft_nbrlen(int nbr);
 char		*ft_newstr(size_t n);
 char		**ft_split(char const *s, char c);
